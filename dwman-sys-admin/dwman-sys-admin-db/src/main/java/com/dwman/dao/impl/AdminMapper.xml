@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dwman.dao.AdminMapper">
+  <update id="update" parameterType="java.util.Map" >
+    UPDATE SYS_ADMIN
+      <include refid="UPDATE_SQL"/>
+    WHERE id=#{id}
+  </update>
+
+    <insert id="insert" parameterType="java.util.Map">
+        INSERT  INTO
+        SYS_ADMIN
+        (NAME, AGE, PHONE, ADDRESS, EMAIL, QQ, CREATE_TIME, CREATE_USER, REMARK, USE_FLAG, DEL_FLAG)
+        VALUES
+        (#{name},#{age},#{phone},#{address},#{email},#{qq},now() ,#{createUser},#{remark},#{useFlag},#{delFlag})
+    </insert>
+
+  <!--<insert id="insert" parameterType="com.dwman.entity.sys.AdminEntity">
+    INSERT  INTO
+    SYS_ADMIN
+    (NAME, AGE, PHONE, ADDRESS, EMAIL, QQ, CREATE_TIME, CREATE_USER, REMARK, USE_FLAG, DEL_FLAG)
+    VALUES
+    (#{name},#{age},#{phone},#{address},#{email},#{qq},now() ,#{createUser},#{remark},#{useFlag},#{delFlag})
+  </insert>-->
+
+  <delete id="deleteById" parameterType="java.lang.Long">
+    DELETE  FROM SYS_ADMIN
+    WHERE ID=#{id}
+  </delete>
+
+  <select id="findById" parameterType="java.lang.Long" resultType="java.util.Map">
+    SELECT * FROM SYS_ADMIN
+    WHERE ID=#{id}
+  </select>
+
+  <select id="findAllByParam" parameterType="java.util.Map" resultType="java.util.Map">
+    SELECT
+    <include refid="COLUMN_SQL"/>
+    FROM SYS_ADMIN
+    WHERE 1 =1
+    <include refid="WHERE_SQL"/>
+  </select>
+
+  <select id="findCount" parameterType="java.util.Map" resultType="java.lang.Long">
+    select COUNT(1) from SYS_ADMIN
+    WHERE  1=1
+    <include refid="WHERE_SQL"/>
+  </select>
+
+  <select id="findAllByPageParam" parameterType="java.util.Map" resultType="java.util.Map">
+    SELECT
+    <include refid="COLUMN_SQL"/>
+    FROM SYS_ADMIN
+    WHERE 1=1
+    <include refid="WHERE_SQL"/>
+  </select>
+
+  <select id="findCountByPageParam" parameterType="java.util.Map" resultType="java.lang.Long">
+    SELECT COUNT(1) size
+    FROM SYS_ADMIN
+    WHERE 1=1
+    <include refid="WHERE_SQL"/>
+  </select>
+
+  <sql id="COLUMN_SQL">
+    NAME,
+    AGE,
+    PHONE,
+    ADDRESS,
+    EMAIL,
+    QQ,
+    CREATE_TIME createTime,
+    CREATE_USER createUser,
+    REMARK,
+    USE_FLAG useFlag,
+    DEL_FLAG delFlag
+  </sql>
+
+  <sql id="WHERE_SQL">
+
+      <if test="id != null">
+        AND id = #{id}
+      </if>
+      <if test="name != null">
+        AND  NAME  = #{name}
+      </if>
+      <if test="age !=null">
+        and age = #{age}
+      </if>
+      <if test="phone!=null">
+        and phone = #{phone}
+      </if>
+      <if test="address !=null">
+        and address = #{address}
+      </if>
+      <if test="email!=null">
+        AND email = #{email}
+      </if>
+      <if test="qq!=null">
+        AND  qq = #{qq}
+      </if>
+      <if test="createTime!=null">
+        and create_time = #{createTime}
+      </if>
+      <if test="createUser!=null">
+        AND  create_user = #{createUser}
+      </if>
+      <if test="remark!=null">
+        AND  remark= #{remark}
+      </if>
+      <if test="useFlag !=null">
+        and use_flag = #{useFlag}
+      </if>
+      <if test="delFlag !=null">
+        and del_flag = #{delFlag}
+      </if>
+
+  </sql>
+
+  <sql id="UPDATE_SQL">
+      <set>
+      <if test="id!=null">
+        ID=#{id},
+      </if>
+      <if test="name!=null">
+       NAME=#{name},
+      </if>
+      <if test="age!=null">
+        AGE=#{age},
+      </if>
+      <if test="phone!=null">
+        PHONE=#{phone},
+      </if>
+       <if test="address!=null">
+         ADDRESS = #{address},
+       </if>
+      <if test="email!=null">
+        EMAIL=#{email},
+      </if>
+      <if test="qq!=null">
+        QQ=#{qq},
+      </if>
+      <if test="createTime!=null">
+        CREATE_TIME = #{createTime},
+      </if>
+     <if test="createUser !=null">
+       CREATE_USER = #{createUser},
+     </if>
+    <if test="useFlag!=null">
+      USE_FLAG = #{useFlag},
+    </if>
+    <if test="delFlag !=null">
+      DEL_FLAG = #{delFlag},
+    </if>
+    <if test="remark!=null">
+      REMARK = #{remark}
+    </if>
+      </set>
+  </sql>
+</mapper>

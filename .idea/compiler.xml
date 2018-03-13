@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="dwman-api-gateway" />
+        <module name="dwman-back" />
+        <module name="dwman-config-server" />
+        <module name="dwman-core" />
+        <module name="dwman-eureka-server" />
+        <module name="dwman-site" />
+        <module name="dwman-sys-admin-biz" />
+        <module name="dwman-sys-admin-db" />
+        <module name="dwman-sys-admin-entity" />
+        <module name="dwman-sys-admin-service" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="dwman-api-gateway" target="1.8" />
+      <module name="dwman-back" target="1.8" />
+      <module name="dwman-config-server" target="1.8" />
+      <module name="dwman-core" target="1.8" />
+      <module name="dwman-eureka-server" target="1.8" />
+      <module name="dwman-parent" target="1.6" />
+      <module name="dwman-site" target="1.8" />
+      <module name="dwman-sys-admin" target="1.6" />
+      <module name="dwman-sys-admin-biz" target="1.8" />
+      <module name="dwman-sys-admin-db" target="1.8" />
+      <module name="dwman-sys-admin-entity" target="1.8" />
+      <module name="dwman-sys-admin-service" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
