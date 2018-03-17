@@ -1,9 +1,0 @@
-<component name="libraryTable">
-  <library name="dao">
-    <CLASSES>
-      <root url="jar://$PROJECT_DIR$/dwman-sys-admin/dwman-sys-admin-db/src/main/java/com/dwman/dao.zip!/" />
-    </CLASSES>
-    <JAVADOC />
-    <SOURCES />
-  </library>
-</component>
