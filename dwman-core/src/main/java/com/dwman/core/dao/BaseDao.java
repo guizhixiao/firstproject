@@ -7,17 +7,22 @@ import java.util.Map;
 
 /**
  * 默认Dao
+ *
  * @param <T>
  */
 @Component
 public interface BaseDao<T> {
 
-    Long update(T t) ;
-    Long deleteById(Long id ) ;
-    Long insert(T t) ;
+    Long update(T t);
 
-    Map<String,Object> findById(Long id) ;
-    Long findCountByPageParam(Map<String,Object> map);
-    List<Map<String,Object>> findAllByPageParam(Map<String,Object> map) ;
+    Long deleteById(Long id);
+
+    Long insert(T t);
+
+    Map<String, Object> findById(Long id);
+
+    Long findCountByPageParam(Map<String, Object> map);
+
+    List<Map<String, Object>> findAllByPageParam(Map<String, Object> map);
 
 }

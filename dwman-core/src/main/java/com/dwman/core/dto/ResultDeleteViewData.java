@@ -7,5 +7,5 @@ import lombok.Data;
  */
 @Data
 public class ResultDeleteViewData extends ResultCommonData {
-    private Long deleteCount ;
+    private Long deleteCount;
 }
