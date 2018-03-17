@@ -8,16 +8,10 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>dwman-sys-admin</artifactId>
-    <packaging>pom</packaging>
+    <packaging>jar</packaging>
 
     <name>dwman-sys-admin</name>
     <url>http://maven.apache.org</url>
-    <modules>
-        <module>dwman-sys-admin-db</module>
-        <module>dwman-sys-admin-entity</module>
-        <module>dwman-sys-admin-service</module>
-        <module>dwman-sys-admin-biz</module>
-    </modules>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

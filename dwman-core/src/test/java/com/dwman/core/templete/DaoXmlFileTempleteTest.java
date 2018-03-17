@@ -1,6 +1,5 @@
 package com.dwman.core.templete;
 
-import com.dwman.entity.AdminExtendsEntity;
 import org.junit.Test;
 
 import java.util.HashMap;
@@ -46,7 +45,7 @@ public class DaoXmlFileTempleteTest {
 //        String[] res =new String[]{"12","313"};
 //        map.put("[params]", Arrays.asList(res));
         // 2.种使用方式
-        map.put("[params]", new AdminExtendsEntity());
+//        map.put("[params]", new AdminExtendsEntity());
         //  3.种使用方式
         //        List<Map<String,Object>> list = new ArrayList<Map<String,Object>>();
         //        Map<String,Object> inMap = null ;

@@ -1,9 +1,0 @@
-package [package];
-
-import com.dwman.core.dao.BaseDao;
-import com.dwman.entity.sys.AdminEntity;
-import org.springframework.stereotype.Component;
-
-@Component
-public interface [class]Mapper  extends BaseDao<[class]Entity>{
-}

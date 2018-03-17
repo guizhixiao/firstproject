@@ -1,7 +1,7 @@
 package [package];
 
 import com.dwman.core.dao.BaseDao;
-import com.dwman.entity.sys.AdminEntity;
+import com.dwman.entity.AdminEntity;
 import org.springframework.stereotype.Component;
 
 @Component

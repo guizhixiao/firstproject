@@ -1,7 +1,0 @@
-package [package];
-
-import com.dwman.core.service.BaseService;
-
-public interface [class]Service<[class]Dao> extends BaseService<[class]Dao> {
-
-}
