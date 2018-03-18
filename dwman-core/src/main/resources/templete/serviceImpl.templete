@@ -1,12 +1,12 @@
 package [package];
 
 import com.dwman.core.service.CoreServiceImpl;
-import com.dwman.service.AdminService;
+import com.dwman.service.[class]Service;
 import org.springframework.stereotype.Service;
 
 
-@Service("[classX]Service")
-public class [class]ServiceImpl<[class]Dao> extends CoreServiceImpl implements [class]Service {
+@Service("[capx][class][/capx]Service")
+public class [class]ServiceImpl extends CoreServiceImpl<[class]Mapper> implements [class]Service {
 
 
 }

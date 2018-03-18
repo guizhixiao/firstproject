@@ -1,7 +1,9 @@
 package com.dwman.biz;
 
+import com.dwman.core.biz.AbstractBiz;
 import com.dwman.core.biz.BaseBiz;
 import com.dwman.core.dto.*;
+import com.dwman.service.AdminService;
 import io.swagger.annotations.*;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -13,7 +15,7 @@ import java.util.Map;
 @RestController
 @RequestMapping("/admin")
 @Api(value = "系统用户管理模块")
-public class AdminBiz<AdminService> extends BaseBiz {
+public class AdminBiz extends AbstractBiz<AdminService> implements BaseBiz<AdminService>{
 
     /**
      * 分页查询数据

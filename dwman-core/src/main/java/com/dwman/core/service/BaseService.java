@@ -1,5 +1,6 @@
 package com.dwman.core.service;
 
+import com.dwman.core.dao.BaseDao;
 import com.dwman.core.dto.*;
 
 import java.util.Map;
@@ -7,7 +8,7 @@ import java.util.Map;
 /***
  *  基础Service
  */
-public interface BaseService<T> {
+public interface BaseService<T extends BaseDao> {
 
     ResultListViewData listAllByPageParam(Map<String, Object> map) throws Exception;
 

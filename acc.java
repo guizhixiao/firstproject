@@ -1,4 +1,4 @@
-package [package];
+package com.dwman.biz;
 
 import com.dwman.core.biz.BaseBiz;
 import com.dwman.core.dto.*;
@@ -11,9 +11,9 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.Map;
 
 @RestController
-@RequestMapping("[rootRequestMapping]")
-@Api(value = "[classComment]")
-public class [class]Biz extends AbstractBiz<[class]Service> implements BaseBiz<[class]Service> {
+@RequestMapping("/dept")
+@Api(value = "单位信息管理")
+public class DeptBiz<DeptService> extends BaseBiz {
 
     /**
      * 分页查询数据

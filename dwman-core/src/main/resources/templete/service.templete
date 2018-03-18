@@ -1,7 +1,8 @@
 package [package];
 
 import com.dwman.core.service.BaseService;
+import com.dwman.dao.[class]Mapper;
 
-public interface [class]Service<[class]Dao> extends BaseService<[class]Dao> {
+public interface [class]Service extends BaseService<[class]Mapper> {
 
 }

@@ -1,10 +1,8 @@
 package com.dwman.service;
 
 import com.dwman.core.service.BaseService;
+import com.dwman.dao.AdminMapper;
 
-import java.util.List;
-import java.util.Map;
-
-public interface AdminService<AdminDao> extends BaseService<AdminDao> {
+public interface AdminService extends BaseService<AdminMapper> {
 
 }

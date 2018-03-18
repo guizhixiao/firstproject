@@ -8,16 +8,16 @@ import java.util.Map;
 /**
  * 默认Dao
  *
- * @param <T>
+ * @param
  */
-@Component
-public interface BaseDao<T> {
+//@Component
+public interface BaseDao {
 
-    Long update(T t);
+    Long update(Map<String,Object> t);
 
     Long deleteById(Long id);
 
-    Long insert(T t);
+    Long insert(Map<String,Object> t);
 
     Map<String, Object> findById(Long id);
 

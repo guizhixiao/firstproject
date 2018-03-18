@@ -62,7 +62,7 @@ public class CommondConvert {
 
         String retMsg = "";
 
-        if (StringUtils.isNotEmpty(msg) && msg.contains(UPPER_TO_LOWER_LINE) && msg.contains(END_CAP_LOWER_X)) {
+        if (StringUtils.isNotEmpty(msg) && msg.contains(CAP_LOWER_X) && msg.contains(END_CAP_LOWER_X)) {
             String dealMsg = msg.substring(msg.indexOf(CAP_LOWER_X) + CAP_LOWER_X.length(), msg.indexOf(END_CAP_LOWER_X));
             //将需要处理的数据转换成大写数据
             retMsg = msg.replace(CAP_LOWER_X + dealMsg + END_CAP_LOWER_X, StringUtils.uncapitalize(dealMsg));
