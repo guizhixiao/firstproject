@@ -1,4 +1,4 @@
-package [package];
+package [package].biz;
 
 import com.dwman.core.biz.BaseBiz;
 import com.dwman.core.dto.*;

@@ -1,4 +1,4 @@
-package [package];
+package [package].dao;
 
 import com.dwman.core.dao.BaseDao;
 import org.springframework.stereotype.Component;

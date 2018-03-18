@@ -1,4 +1,4 @@
-package [package];
+package [package].service;
 
 import com.dwman.core.service.BaseService;
 import com.dwman.dao.[class]Mapper;
