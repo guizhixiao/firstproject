@@ -2,11 +2,10 @@ package com.dwman.core.templete;
 
 import lombok.Data;
 
-@Data
-public class TempleteFileEntity {
-    private String templateFile;
-    private String descFile;
-
+/**
+ * 生成文件的模板存放路径。
+ */
+public class TltType {
     public static final String DEFAULT_BIZ_TEMPLETE="/templete/biz.templete";
     public static final String DEFAULT_SERVICE_TEMPLETE="/templete/service.templete";
     public static final String DEFAULT_SERVICE_IMPL_TEMPLETE="/templete/serviceImpl.templete";

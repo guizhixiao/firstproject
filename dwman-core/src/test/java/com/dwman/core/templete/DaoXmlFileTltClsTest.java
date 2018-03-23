@@ -5,7 +5,7 @@ import org.junit.Test;
 import java.util.HashMap;
 import java.util.Map;
 
-public class DaoXmlFileTempleteTest {
+public class DaoXmlFileTltClsTest {
 
 
     @Test
@@ -22,12 +22,12 @@ public class DaoXmlFileTempleteTest {
 
     @Test
     public void main() throws Exception {
-        TempleteFileEntity templeteFileEntity = new TempleteFileEntity();
-        templeteFileEntity.setTemplateFile("/templete/dao_xml.templete");
-        templeteFileEntity.setDescFile("aa.XML");
-
-        CommonFileTemplete fileTemplete = new CommonFileTemplete(templeteFileEntity, init());
-        fileTemplete.createTempleteFile();
+//        TltType tltType = new TltType();
+//        tltType.setTemplateFile("/templete/dao_xml.templete");
+//        tltType.setDescFile("aa.XML");
+//
+//        CommonFileTemplete fileTemplete = new CommonFileTemplete(tltType, init());
+//        fileTemplete.createTempleteFile();
     }
 
 

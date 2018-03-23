@@ -5,16 +5,16 @@ import org.junit.Test;
 import java.util.HashMap;
 import java.util.Map;
 
-public class ServiceFileImplTempleteTest {
+public class ServiceFileImplTltClsTest {
 
     @Test
     public void test() throws Exception {
-        TempleteFileEntity templeteFileEntity = new TempleteFileEntity();
-        templeteFileEntity.setTemplateFile("/templete/serviceImpl.templete");
-        templeteFileEntity.setDescFile("aa.java");
-
-        CommonFileTemplete fileTemplete = new CommonFileTemplete(templeteFileEntity, init());
-        fileTemplete.createTempleteFile();
+//        TltType tltType = new TltType();
+//        tltType.setTemplateFile("/templete/serviceImpl.templete");
+//        tltType.setDescFile("aa.java");
+//
+//        CommonFileTemplete fileTemplete = new CommonFileTemplete(tltType, init());
+//        fileTemplete.createTempleteFile();
     }
 
 

@@ -11,7 +11,7 @@
         INSERT  INTO
         [table]
         (
-          [for][params]###[Utoxline][name][/Utoxline],[/for]
+          [for][params]###[column],[/for]
         )
         VALUES
         (
@@ -58,16 +58,16 @@
   </select>
 
   <sql id="COLUMN_SQL">
-    [for][params]###[Utoxline][name][/Utoxline] as [name],[/for]
+    [for][params]###[column] as [name],[/for]
   </sql>
 
   <sql id="WHERE_SQL">
-      [for][params]###<if test="[name] != null">  AND [Utoxline][name][/Utoxline] = #{[name]}  </if>[/for]
+      [for][params]###<if test="[name] != null">  AND [column] = #{[name]}  </if>[/for]
   </sql>
 
   <sql id="UPDATE_SQL">
       <set>
-          [for][params]###<if test="[name]!=null">   [Utoxline][name][/Utoxline]=#{[name]},  </if>[/for]
+          [for][params]###<if test="[name]!=null">   [column]=#{[name]},  </if>[/for]
       </set>
   </sql>
 </mapper>

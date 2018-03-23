@@ -6,16 +6,16 @@ import org.junit.Test;
 import java.util.HashMap;
 import java.util.Map;
 
-public class DaoFileTempleteTest {
+public class DaoFileTltClsTest {
 
     @Test
     public void test() throws Exception {
-        TempleteFileEntity templeteFileEntity = new TempleteFileEntity();
-        templeteFileEntity.setTemplateFile("/templete/dao.templete");
-        templeteFileEntity.setDescFile("aa.java");
-
-        CommonFileTemplete fileTemplete = new CommonFileTemplete(templeteFileEntity, init());
-        fileTemplete.createTempleteFile();
+//        TltType tltType = new TltType();
+//        tltType.setTemplateFile("/templete/dao.templete");
+//        tltType.setDescFile("aa.java");
+//
+//        CommonFileTemplete fileTemplete = new CommonFileTemplete(tltType, init());
+//        fileTemplete.createTempleteFile();
     }
 
 

@@ -1,10 +1,9 @@
 package com.dwman.entity;
 
-import com.dwman.core.templete.TempExtendsEntity;
 import lombok.Data;
 
 @Data
-public class DeptEntity  extends TempExtendsEntity{
+public class DeptEntity {
     private String id="id";
 
     private String deptNo="单位编号";

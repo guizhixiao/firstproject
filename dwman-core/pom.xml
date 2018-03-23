@@ -88,7 +88,7 @@
 
     </dependencies>
     <build>
-        <!-- 将 java src 下的xml 和properties 的文件打包 -->
+        <!-- 将 java src 下的xml、templete 和properties 的文件打包 -->
         <resources>
             <resource>
                 <directory>src/main/resources</directory>

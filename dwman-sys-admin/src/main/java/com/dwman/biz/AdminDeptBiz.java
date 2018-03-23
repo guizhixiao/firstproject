@@ -3,7 +3,7 @@ package com.dwman.biz;
 import com.dwman.core.biz.AbstractBiz;
 import com.dwman.core.biz.BaseBiz;
 import com.dwman.core.dto.*;
-import com.dwman.service.DeptService;
+import com.dwman.service.AdminDeptService;
 import io.swagger.annotations.*;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -13,10 +13,9 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.Map;
 
 @RestController
-@RequestMapping("/dept")
-@Api(value = "单位信息管理")
-public class DeptBiz extends AbstractBiz<DeptService> implements BaseBiz<DeptService>{
-
+@RequestMapping("/adminDept")
+@Api(value = "用户单位模块")
+public class AdminDeptBiz extends AbstractBiz<AdminDeptService> implements BaseBiz<AdminDeptService> {
 
     /**
      * 分页查询数据
@@ -25,11 +24,9 @@ public class DeptBiz extends AbstractBiz<DeptService> implements BaseBiz<DeptSer
      */
     @ApiOperation("分页查询数据连")
     @ApiImplicitParams({
-@ApiImplicitParam(name = "id",value = "id"),
-@ApiImplicitParam(name = "deptNo",value = "单位编号"),
-@ApiImplicitParam(name = "deptName",value = "单位名称"),
-@ApiImplicitParam(name = "rangeRank",value = "使用范围"),
-@ApiImplicitParam(name = "useFlag",value = "是否使用"),
+@ApiImplicitParam(name = "id",value = "编号"),
+@ApiImplicitParam(name = "userId",value = "用户编号"),
+@ApiImplicitParam(name = "deptId",value = "单位编号"),
 @ApiImplicitParam(name = "createUser",value = "创建人"),
 @ApiImplicitParam(name = "createTime",value = "创建时间"),
 @ApiImplicitParam(name = "remark",value = "备注"),
@@ -49,11 +46,9 @@ public class DeptBiz extends AbstractBiz<DeptService> implements BaseBiz<DeptSer
     @ApiOperation("查询数据总量")
     @RequestMapping(value = "/total",method = RequestMethod.POST)
     @ApiImplicitParams({
-@ApiImplicitParam(name = "id",value = "id"),
-@ApiImplicitParam(name = "deptNo",value = "单位编号"),
-@ApiImplicitParam(name = "deptName",value = "单位名称"),
-@ApiImplicitParam(name = "rangeRank",value = "使用范围"),
-@ApiImplicitParam(name = "useFlag",value = "是否使用"),
+@ApiImplicitParam(name = "id",value = "编号"),
+@ApiImplicitParam(name = "userId",value = "用户编号"),
+@ApiImplicitParam(name = "deptId",value = "单位编号"),
 @ApiImplicitParam(name = "createUser",value = "创建人"),
 @ApiImplicitParam(name = "createTime",value = "创建时间"),
 @ApiImplicitParam(name = "remark",value = "备注"),
@@ -81,11 +76,9 @@ public class DeptBiz extends AbstractBiz<DeptService> implements BaseBiz<DeptSer
     @ApiOperation("修改数据信息")
     @RequestMapping(value = "/update",method = RequestMethod.POST)
     @ApiImplicitParams({
-@ApiImplicitParam(name = "id",value = "id"),
-@ApiImplicitParam(name = "deptNo",value = "单位编号"),
-@ApiImplicitParam(name = "deptName",value = "单位名称"),
-@ApiImplicitParam(name = "rangeRank",value = "使用范围"),
-@ApiImplicitParam(name = "useFlag",value = "是否使用"),
+@ApiImplicitParam(name = "id",value = "编号"),
+@ApiImplicitParam(name = "userId",value = "用户编号"),
+@ApiImplicitParam(name = "deptId",value = "单位编号"),
 @ApiImplicitParam(name = "createUser",value = "创建人"),
 @ApiImplicitParam(name = "createTime",value = "创建时间"),
 @ApiImplicitParam(name = "remark",value = "备注"),
@@ -99,11 +92,9 @@ public class DeptBiz extends AbstractBiz<DeptService> implements BaseBiz<DeptSer
     @ApiOperation("新增数据信息")
     @RequestMapping(value = "insert",method = RequestMethod.POST)
     @ApiImplicitParams({
-@ApiImplicitParam(name = "id",value = "id"),
-@ApiImplicitParam(name = "deptNo",value = "单位编号"),
-@ApiImplicitParam(name = "deptName",value = "单位名称"),
-@ApiImplicitParam(name = "rangeRank",value = "使用范围"),
-@ApiImplicitParam(name = "useFlag",value = "是否使用"),
+@ApiImplicitParam(name = "id",value = "编号"),
+@ApiImplicitParam(name = "userId",value = "用户编号"),
+@ApiImplicitParam(name = "deptId",value = "单位编号"),
 @ApiImplicitParam(name = "createUser",value = "创建人"),
 @ApiImplicitParam(name = "createTime",value = "创建时间"),
 @ApiImplicitParam(name = "remark",value = "备注"),

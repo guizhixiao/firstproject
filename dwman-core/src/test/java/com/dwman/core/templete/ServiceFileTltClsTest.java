@@ -5,7 +5,7 @@ import org.junit.Test;
 import java.util.HashMap;
 import java.util.Map;
 
-public class ServiceFileTempleteTest {
+public class ServiceFileTltClsTest {
 
     @Test
     public void read() {
@@ -22,12 +22,12 @@ public class ServiceFileTempleteTest {
 
     @Test
     public void test() throws Exception {
-        TempleteFileEntity templeteFileEntity = new TempleteFileEntity();
-        templeteFileEntity.setTemplateFile("/templete/service.templete");
-        templeteFileEntity.setDescFile("aa.java");
-
-        CommonFileTemplete fileTemplete = new CommonFileTemplete(templeteFileEntity, init());
-        fileTemplete.createTempleteFile();
+//        TltType tltType = new TltType();
+//        tltType.setTemplateFile("/templete/service.templete");
+//        tltType.setDescFile("aa.java");
+//
+//        CommonFileTemplete fileTemplete = new CommonFileTemplete(tltType, init());
+//        fileTemplete.createTempleteFile();
     }
 
 
