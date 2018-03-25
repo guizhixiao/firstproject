@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.dwman.dao.AdminDeptMapper">
+<mapper namespace="com.dwman.dao.AdminMapper">
   <update id="update" parameterType="java.util.Map" >
     UPDATE sys_admin
       <include refid="UPDATE_SQL"/>
@@ -12,21 +12,33 @@
         sys_admin
         (
 id,
-user_id,
-dept_id,
-create_user,
+name,
+name,
+phone,
+address,
+email,
+qq,
 create_time,
-remark
+create_user,
+remark,
+use_flag,
+del_flag
 
         )
         VALUES
         (
 #{id},
-#{userId},
-#{deptId},
-#{createUser},
+#{name},
+#{age},
+#{phone},
+#{address},
+#{email},
+#{qq},
 #{createTime},
-#{remark}
+#{createUser},
+#{remark},
+#{useFlag},
+#{delFlag}
 
         )
     </insert>
@@ -71,32 +83,50 @@ remark
 
   <sql id="COLUMN_SQL">
 id as id,
-user_id as userId,
-dept_id as deptId,
-create_user as createUser,
+name as name,
+name as age,
+phone as phone,
+address as address,
+email as email,
+qq as qq,
 create_time as createTime,
-remark as remark
+create_user as createUser,
+remark as remark,
+use_flag as useFlag,
+del_flag as delFlag
 
   </sql>
 
   <sql id="WHERE_SQL">
 <if test="id != null">  AND id = #{id}  </if>
-<if test="userId != null">  AND user_id = #{userId}  </if>
-<if test="deptId != null">  AND dept_id = #{deptId}  </if>
-<if test="createUser != null">  AND create_user = #{createUser}  </if>
+<if test="name != null">  AND name = #{name}  </if>
+<if test="age != null">  AND name = #{age}  </if>
+<if test="phone != null">  AND phone = #{phone}  </if>
+<if test="address != null">  AND address = #{address}  </if>
+<if test="email != null">  AND email = #{email}  </if>
+<if test="qq != null">  AND qq = #{qq}  </if>
 <if test="createTime != null">  AND create_time = #{createTime}  </if>
+<if test="createUser != null">  AND create_user = #{createUser}  </if>
 <if test="remark != null">  AND remark = #{remark}  </if>
+<if test="useFlag != null">  AND use_flag = #{useFlag}  </if>
+<if test="delFlag != null">  AND del_flag = #{delFlag}  </if>
 
   </sql>
 
   <sql id="UPDATE_SQL">
       <set>
 <if test="id!=null">   id=#{id}, </if>
-<if test="userId!=null">   user_id=#{userId}, </if>
-<if test="deptId!=null">   dept_id=#{deptId}, </if>
-<if test="createUser!=null">   create_user=#{createUser}, </if>
+<if test="name!=null">   name=#{name}, </if>
+<if test="age!=null">   name=#{age}, </if>
+<if test="phone!=null">   phone=#{phone}, </if>
+<if test="address!=null">   address=#{address}, </if>
+<if test="email!=null">   email=#{email}, </if>
+<if test="qq!=null">   qq=#{qq}, </if>
 <if test="createTime!=null">   create_time=#{createTime}, </if>
-<if test="remark!=null">   remark=#{remark} </if>
+<if test="createUser!=null">   create_user=#{createUser}, </if>
+<if test="remark!=null">   remark=#{remark}, </if>
+<if test="useFlag!=null">   use_flag=#{useFlag}, </if>
+<if test="delFlag!=null">   del_flag=#{delFlag} </if>
 
       </set>
   </sql>

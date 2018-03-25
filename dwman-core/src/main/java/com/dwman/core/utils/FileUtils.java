@@ -2,10 +2,7 @@ package com.dwman.core.utils;
 
 import org.apache.commons.lang3.StringUtils;
 
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.OutputStream;
-import java.io.PrintWriter;
+import java.io.*;
 import java.util.List;
 
 public class FileUtils {
@@ -48,13 +45,13 @@ public class FileUtils {
     public List<File> getFilesByPath(String path, boolean isRecursive, List<File> files)  throws Exception {
 
         if (StringUtils.isEmpty(path)) {
-            throw new Exception("文件不存在！");
+            throw new FileNotFoundException("文件不存在！");
         }
 
         File file = new File(path);
 
         if (!file.exists()) {
-            throw new Exception("文件不存在！");
+            throw new FileNotFoundException("文件不存在！");
         }
 
         File[] filesList = file.listFiles();
@@ -68,7 +65,5 @@ public class FileUtils {
 
         return files;
     }
-
-
 
 }

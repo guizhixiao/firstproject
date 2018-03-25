@@ -6,7 +6,7 @@ import [package].service.[class]Service;
 import org.springframework.stereotype.Service;
 
 
-@Service("[capx][class][/capx]Service")
+@Service("[classX]Service")
 public class [class]ServiceImpl extends CoreServiceImpl<[class]Mapper> implements [class]Service {
 
 

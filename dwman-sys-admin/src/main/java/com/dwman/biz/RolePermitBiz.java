@@ -1,9 +1,9 @@
-package [package].biz;
+package com.dwman.biz;
 
 import com.dwman.core.biz.AbstractBiz;
 import com.dwman.core.biz.BaseBiz;
 import com.dwman.core.dto.*;
-import com.dwman.service.[class]Service;
+import com.dwman.service.RolePermitService;
 import io.swagger.annotations.*;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -13,9 +13,9 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.Map;
 
 @RestController
-@RequestMapping("[rootRequestMapping]")
-@Api(value = "[classComment]")
-public class [class]Biz extends AbstractBiz<[class]Service> implements BaseBiz<[class]Service> {
+@RequestMapping("/rolePermit")
+@Api(value = "角色权限表")
+public class RolePermitBiz extends AbstractBiz<RolePermitService> implements BaseBiz<RolePermitService> {
 
     /**
      * 分页查询数据
@@ -24,7 +24,13 @@ public class [class]Biz extends AbstractBiz<[class]Service> implements BaseBiz<[
      */
     @ApiOperation("分页查询数据连")
     @ApiImplicitParams({
-            [for][params]###@ApiImplicitParam(name = "[name]",value = "[commonts]")[comma][/for]
+@ApiImplicitParam(name = "id",value = "id"),
+@ApiImplicitParam(name = "roleId",value = "角色编号"),
+@ApiImplicitParam(name = "permitId",value = "权限编号"),
+@ApiImplicitParam(name = "createUser",value = "创建人"),
+@ApiImplicitParam(name = "createTime",value = "创建时间"),
+@ApiImplicitParam(name = "remark",value = "备注")
+
     })
     @RequestMapping(value = "/list",method = RequestMethod.POST)
     protected ResultListViewData list() throws Exception {
@@ -40,7 +46,13 @@ public class [class]Biz extends AbstractBiz<[class]Service> implements BaseBiz<[
     @ApiOperation("查询数据总量")
     @RequestMapping(value = "/total",method = RequestMethod.POST)
     @ApiImplicitParams({
-           [for][params]###@ApiImplicitParam(name = "[name]",value = "[commonts]")[comma][/for]
+@ApiImplicitParam(name = "id",value = "id"),
+@ApiImplicitParam(name = "roleId",value = "角色编号"),
+@ApiImplicitParam(name = "permitId",value = "权限编号"),
+@ApiImplicitParam(name = "createUser",value = "创建人"),
+@ApiImplicitParam(name = "createTime",value = "创建时间"),
+@ApiImplicitParam(name = "remark",value = "备注")
+
     })
     protected ResultTotalViewData dataTotalCount() throws Exception {
         Map<String,Object> map = requestToMap();
@@ -64,7 +76,13 @@ public class [class]Biz extends AbstractBiz<[class]Service> implements BaseBiz<[
     @ApiOperation("修改数据信息")
     @RequestMapping(value = "/update",method = RequestMethod.POST)
     @ApiImplicitParams({
-            [for][params]###@ApiImplicitParam(name = "[name]",value = "[commonts]")[comma][/for]
+@ApiImplicitParam(name = "id",value = "id"),
+@ApiImplicitParam(name = "roleId",value = "角色编号"),
+@ApiImplicitParam(name = "permitId",value = "权限编号"),
+@ApiImplicitParam(name = "createUser",value = "创建人"),
+@ApiImplicitParam(name = "createTime",value = "创建时间"),
+@ApiImplicitParam(name = "remark",value = "备注")
+
     })
     protected ResultUpdateViewDate update() throws Exception {
         Map<String,Object> map = requestToMap();
@@ -74,7 +92,13 @@ public class [class]Biz extends AbstractBiz<[class]Service> implements BaseBiz<[
     @ApiOperation("新增数据信息")
     @RequestMapping(value = "insert",method = RequestMethod.POST)
     @ApiImplicitParams({
-           [for][params]###@ApiImplicitParam(name = "[name]",value = "[commonts]")[comma][/for]
+@ApiImplicitParam(name = "id",value = "id"),
+@ApiImplicitParam(name = "roleId",value = "角色编号"),
+@ApiImplicitParam(name = "permitId",value = "权限编号"),
+@ApiImplicitParam(name = "createUser",value = "创建人"),
+@ApiImplicitParam(name = "createTime",value = "创建时间"),
+@ApiImplicitParam(name = "remark",value = "备注")
+
     })
     protected ResultInsertViewData insert() throws Exception {
         Map<String,Object> map = requestToMap();

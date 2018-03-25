@@ -30,4 +30,6 @@ public class TltConfiguration {
     //空字符
     public static final String EMPTY_STR="";
 
+    public static final String COMMA ="[comma]";
+
 }

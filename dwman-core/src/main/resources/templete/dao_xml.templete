@@ -11,11 +11,11 @@
         INSERT  INTO
         [table]
         (
-          [for][params]###[column],[/for]
+          [for][params]###[column][comma][/for]
         )
         VALUES
         (
-          [for][params]####{[name]},[/for]
+          [for][params]####{[name]}[comma][/for]
         )
     </insert>
   <delete id="deleteById" parameterType="java.lang.Long">
@@ -58,7 +58,7 @@
   </select>
 
   <sql id="COLUMN_SQL">
-    [for][params]###[column] as [name],[/for]
+    [for][params]###[column] as [name][comma][/for]
   </sql>
 
   <sql id="WHERE_SQL">
@@ -67,7 +67,7 @@
 
   <sql id="UPDATE_SQL">
       <set>
-          [for][params]###<if test="[name]!=null">   [column]=#{[name]},  </if>[/for]
+          [for][params]###<if test="[name]!=null">   [column]=#{[name]}[comma] </if>[/for]
       </set>
   </sql>
 </mapper>

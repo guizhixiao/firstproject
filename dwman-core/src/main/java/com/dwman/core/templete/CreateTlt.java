@@ -67,7 +67,9 @@ public class CreateTlt {
         if (annotation != null) {
             TltCls tltCls = (TltCls) annotation;
             data.put("[package]", packageName);
-            data.put("[class]", clazz.getSimpleName().replace(TltConfiguration.ENTITY_POSTFIX, TltConfiguration.EMPTY_STR));
+            String simpleName = clazz.getSimpleName().replace(TltConfiguration.ENTITY_POSTFIX, TltConfiguration.EMPTY_STR) ;
+            data.put("[class]",simpleName );
+            data.put("[classX]",StringUtils.uncapitalize(simpleName));
             data.put("[table]", tltCls.table());
             data.put("[classComment]", tltCls.comments());
             data.put("[rootRequestMapping]", tltCls.requestMapping());
@@ -175,9 +177,9 @@ public class CreateTlt {
 
         Field[] fields = clazz.getDeclaredFields();
 
-        for (Field field : fields) {
+        for (int i=0 ;i<fields.length ;i++) {
             resLine = line;
-            Annotation fieldAnnotation = field.getAnnotation(TltFld.class);
+            Annotation fieldAnnotation = fields[i].getAnnotation(TltFld.class);
             TltFld tltFld = (TltFld) fieldAnnotation;
             Method[] declaredMethods = tltFld.getClass().getDeclaredMethods();
 
@@ -191,6 +193,12 @@ public class CreateTlt {
                     resLine = resLine.replace("[" + method.getName() + "]",
                             TltConfiguration.EMPTY_STR + method.invoke(tltFld));
                 }
+            }
+
+            if (i<fields.length-1){
+                resLine = resLine.replace(TltConfiguration.COMMA,",");
+            }else {
+                resLine = resLine.replace(TltConfiguration.COMMA,"");
             }
 
             if (resLine.contains(TltConfiguration.SPLIT_FLAG)) {

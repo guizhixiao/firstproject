@@ -21,7 +21,8 @@ public class BatchTlt {
 //    }
 
     /***
-     *
+     * 批量生成文件
+     *  在该方法中，系统会循环查找Entity中存在@TltFCls注解的类，查到了，就生成文件。
      * @param parentPackage  包名称（上级包名称）
      * @param templeteType 生成文件的类型
      */
@@ -31,6 +32,7 @@ public class BatchTlt {
         FileUtils fileUtils = new FileUtils();
         List<File> lists = fileUtils.getFilesByPath(entityPath, true, new ArrayList<File>());
         Map<String, Object> map = null;
+
         for (File fl : lists) {
             map = new HashMap<String, Object>();
             String className = parentPackage + ".entity." + fl.getName().replace(".java", "");
@@ -41,20 +43,16 @@ public class BatchTlt {
                 CreateTlt tlt = new CreateTlt(tltConfiguration, clazz, parentPackage);
 
                 String suffixPackage = projectPath + parentPackage.replace(".", "/") + "/";
+                tltConfiguration.setTemplateFile(templeteType);
                 if (templeteType.contains(TltType.DEFAULT_BIZ_TEMPLETE)) {
-                    tltConfiguration.setTemplateFile(TltType.DEFAULT_BIZ_TEMPLETE);
                     tltConfiguration.setDescFile(suffixPackage + "biz" + "/" + tlt.getPrefixClassName() + "Biz.java");
                 } else if (templeteType.contains(TltType.DEFAULT_SERVICE_TEMPLETE)) {
-                    tltConfiguration.setTemplateFile(TltType.DEFAULT_SERVICE_TEMPLETE);
                     tltConfiguration.setDescFile(suffixPackage + "service" + "/" + tlt.getPrefixClassName() + "Service.java");
                 } else if (templeteType.contains(TltType.DEFAULT_SERVICE_IMPL_TEMPLETE)) {
-                    tltConfiguration.setTemplateFile(TltType.DEFAULT_SERVICE_IMPL_TEMPLETE);
                     tltConfiguration.setDescFile(suffixPackage + "service" + "/impl/" + tlt.getPrefixClassName() + "ServiceImpl.java");
                 } else if (templeteType.contains(TltType.DEFAULT_DAO_TEMPLETE)) {
-                    tltConfiguration.setTemplateFile(TltType.DEFAULT_DAO_TEMPLETE);
                     tltConfiguration.setDescFile(suffixPackage + "dao" + "/" + tlt.getPrefixClassName() + "Mapper.java");
                 } else if (templeteType.contains(TltType.DEFAULT_DAO_XML_TEMPLETE)) {
-                    tltConfiguration.setTemplateFile(TltType.DEFAULT_DAO_XML_TEMPLETE);
                     tltConfiguration.setDescFile(suffixPackage + "dao/impl" + "/" + tlt.getPrefixClassName() + "Mapper.xml");
                 }
 
